@@ -5,19 +5,14 @@ require 'vendor/autoload.php';
 
 $client = ClientBuilder::create()->build();
 
-/* Pagination  */
+// Search with specific Fields
+
 
 $params = [];
 $params['index'] = 'pokemon';
 $params['type'] = 'pokemon_trainer';
-$params['body']['query']['bool']['must']['terms']['age'] = array(30);
-$params['size'] = 3;
-$params['from'] = 10;
+$params['body']['query']['match']['age'] = 30;
 
 $result = $client->search($params);
 
-/* Pagination ends */
-
-
-echo "<pre>";
-print_r($result);
+// Search with specific Fields Ends 

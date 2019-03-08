@@ -17,7 +17,3 @@ $params['from'] = 10;
 $result = $client->search($params);
 
 /* Pagination ends */
-
-
-echo "<pre>";
-print_r($result);
